@@ -1,0 +1,44 @@
+h1{
+  font-weight: 600;
+  margin: 0 0 0 0;
+  font-size: var(--fontSize6);
+  font-family: var(--primaryFont);
+  line-height: 1.309em;
+  display: flex;
+  flex-direction: column;
+  text-transform: lowercase;
+}
+
+h2{
+  font-weight: 600;
+  margin: var(--spacing7) 0 0 0;
+  font-size: var(--fontSize4);
+  font-family: var(--primaryFont);
+  line-height: 1.309em;
+  display: flex;
+  flex-direction: column;
+  text-transform: lowercase;
+
+}
+
+h3{
+  font-weight: 600;
+  margin: var(--spacing6) 0 0 0;
+  font-size: var(--fontSize3);
+  font-family: var(--primaryFont);
+  line-height: 1.309em;
+  display: flex;
+  flex-direction: column;
+  text-transform: lowercase;
+}
+
+h4{
+  font-weight: 600;
+  margin: var(--spacing6) 0 0 0;
+  font-size: var(--fontSize2);
+  font-family: var(--primaryFont);
+  line-height: 1.309em;
+  display: flex;
+  flex-direction: column;
+  text-transform: lowercase;
+}
