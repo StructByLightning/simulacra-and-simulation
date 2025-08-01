@@ -81,18 +81,29 @@ figure{
 }
 
 table{
+  margin-top: var(--spacing5);
   width: 100%;
   border-collapse: collapse;
   break-inside: avoid;
   page-break-inside: avoid; /* Legacy support */
   font-size: var(--fontSize0);
-  thead tr th{
+  thead tr:last-child{
     border-bottom: 1px solid black;
   }
 
   th, td{
-    padding: var(--spacing0) var(--spacing4);
+    padding: var(--spacing4) var(--spacing4);
     text-align: center;
+    line-height: 1.3em;
+  }
+
+  td.small{
+    font-size: 0.7rem;
+  }
+
+  ol{
+    text-align: left;
+    margin: 0;
   }
 }
 
