@@ -1,0 +1,145 @@
+blockquote{
+  border-left: 3px solid black;
+  padding: var(--spacing4);
+  font-family: var(--primaryFont);
+  margin: var(--spacing5) 0;
+
+  >:nth-child(1){
+    margin-top: 0;
+  }
+
+  >:nth-last-child(1){
+    margin-bottom: 0;
+  }
+
+  .author{
+    font-style: italic;
+
+  }
+}
+
+a{
+  text-decoration: none;
+  color: black;
+  font-family: var(--primaryFont);
+  font-size: var(--fontSize2);
+}
+
+figure{
+  margin: var(--spacing5) 0;
+  img{
+    width: 100%;
+  }
+
+  figcaption{
+    font-family: var(--primaryFont);
+    font-size: var(--fontSize0);
+    margin-top: var(--spacing3);
+    font-style: italic;
+    text-align: center;
+  }
+
+  &.medium{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img{
+      width: 81%;
+    }
+    figcaption{
+      max-width: 81%;
+    }
+  }
+
+
+  &.small{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img{
+      width: 61.8%;
+    }
+    figcaption{
+      max-width: 61.8%;
+    }
+  }
+
+  &.tiny{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img{
+      width: 20%;
+    }
+    figcaption{
+      max-width: 61%;
+    }
+  }
+}
+
+table{
+  margin-top: var(--spacing5);
+  width: 100%;
+  border-collapse: collapse;
+  break-inside: avoid;
+  page-break-inside: avoid; /* Legacy support */
+  font-size: var(--fontSize0);
+  thead tr:last-child{
+    border-bottom: 1px solid black;
+  }
+
+  th, td{
+    padding: var(--spacing3) var(--spacing4);
+    text-align: center;
+    line-height: 1.3em;
+  }
+
+  td.small{
+    font-size: 0.7rem;
+  }
+
+  ol{
+    text-align: left;
+    margin: 0;
+  }
+
+  &.compact{
+    th, td{
+      padding: var(--spacing0) var(--spacing3);
+    font-size: 0.8rem;
+    }
+  }
+}
+
+ol{
+  padding-left: 2rem;
+}
+
+
+pre{
+  white-space: pre-wrap;
+  font-family: Fira Code, serif;
+  font-size: var(--fontSize1);
+  border: 1px solid black;
+  padding: var(--spacing4);
+}
+
+code{
+  font-family: Fira Code, serif;
+  font-size: 0.7rem;
+}
+
+.newpage{
+  break-before: page;
+}
+
+
+blockquote *:first-child{
+  margin-top: 0;
+}
+blockquote *:last-child{
+  margin-top: 0;
+}

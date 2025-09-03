@@ -1,0 +1,211 @@
+
+.footnote{
+  font-size: var(--fontSize0);
+
+  p{
+    margin: var(--spacing4) 0;
+  }
+}
+
+// Initialize footnote counter
+body {
+  counter-reset: footnote;
+}
+
+@page {
+  size: 6in 8.5in;
+  margin: 0.75in 0.5in 0.75in 0.5in;
+  
+  @footnote {
+    border-top: 1px solid black;
+    padding-top: 8pt;
+    margin-top: 12pt;
+  } 
+}
+
+h1{
+  string-set: chapter-title content(),  section-title '\200B';
+//  
+}
+
+h2{
+  string-set: section-title content();
+}
+
+@page :left{
+  @top-left {
+    content: string(chapter-title);
+    border-bottom: 0.5pt solid black;
+    white-space: nowrap;
+    height: 1.618em;
+    text-align: left;
+    font-family: var(--secondaryFont);
+    font-size: 0.8em;
+    align-self: center;
+  }
+
+  @bottom-left {
+    border-top: 0.5pt solid black;
+    white-space: nowrap;
+    content: counter(page);
+    height: 1.618em;
+    font-size: 0.8em;
+    align-self: center;
+  }
+}
+
+@page :right{
+  @top-right {
+    content: string(section-title);
+    border-bottom: 0.5pt solid black;
+    white-space: nowrap;
+    height: 1.618em;
+    text-align: right;
+    font-family: var(--secondaryFont);
+    font-size: 0.8em;
+    align-self: center;
+  }
+
+  @bottom-right {
+    border-top: 0.5pt solid black;
+    white-space: nowrap;
+    height: 1.618em;
+    content: counter(page);
+    font-size: 0.8em;
+    align-self: center;
+  }
+
+}
+
+// Generate chapter styles for chapters 1-20
+@for $i from 1 through 20 {
+  // Class to apply the named page
+  .chapter#{$i} {
+    page: chapter#{$i};
+    break-before: page;
+    page-break-before: right;
+    display: block;
+  }
+
+  @page chapter#{$i} {
+    size: 6in 8.5in;
+    margin: 0.75in 0.5in 0.75in 0.5in;
+  }
+
+
+  // First page of each chapter type - hide all margins
+  @page chapter#{$i}:first {
+    @top-left {
+      display: none;
+      content: none;
+    }
+    @top-right {
+      display: none;
+      content: none;
+    }
+  }
+
+}
+
+@page :blank{
+  @top-left {
+    display: none;
+    content: none;
+  }
+  @top-right {
+    display: none;
+    content: none;
+  }
+  @bottom-left {
+    content: none;
+    display: none;
+  }
+  @bottom-right {
+    content: none;
+    display: none;
+  }
+}
+
+@page :nth(1){
+
+  @bottom-left {
+    content: none;
+    display: none;
+  }
+  @bottom-right {
+    content: none;
+    display: none;
+  }
+}
+
+@page :nth(3){
+
+  @bottom-left {
+    content: none;
+    display: none;
+  }
+  @bottom-right {
+    content: none;
+    display: none;
+  }
+}
+
+@page :nth(4){
+
+  @bottom-left {
+    content: none;
+    display: none;
+  }
+  @bottom-right {
+    content: none;
+    display: none;
+  }
+}
+
+
+@page :nth(5){
+
+  @bottom-left {
+    content: none;
+    display: none;
+  }
+  @bottom-right {
+    content: none;
+    display: none;
+  }
+}
+
+
+@page :nth(285){
+
+  @bottom-left {
+    content: none;
+    display: none;
+  }
+  @bottom-right {
+    content: none;
+    display: none;
+  }
+}
+
+// Main footnote styling
+.footnote {
+  float: footnote;
+  font-size: 8pt;
+  line-height: 1.3;
+  counter-increment: footnote;
+}
+
+// Footnote call (inline number)
+.footnote::footnote-call {
+  content: counter(footnote);
+}
+
+.footnote.adjacent::footnote-call{
+  content: " " counter(footnote);
+}
+
+
+.noheader{
+  display: none;
+}
